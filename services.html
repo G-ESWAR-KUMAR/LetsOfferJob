@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Offer Job</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-image: url(https://media.istockphoto.com/id/1343986292/vector/fluid-wallpaper-abstract-background-gradient-blurred.jpg?s=2048x2048&w=is&k=20&c=OeyCQ1van9AqnsaDkaKU63v5gkL29wy5oJRBKRZ94i8=);
+            background-repeat: no-repeat;
+            background-size: cover; */
+            background-color:rgb(255, 255, 255);
+        }
+       h1 {
+            color:goldenrod;
+            font-family: "Abril Fatface", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .item {
+            flex: 1 1 200px;
+            margin: 10px;
+            padding: 20px;
+            height: 100%;
+            background-color:black;
+            border-radius: 10px;
+            box-shadow: goldenrod 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px
+                }
+
+        img {
+            width: 5%;
+            height: 5%;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        .background-video-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background-video-wrap video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .dropdown-menu .dropdown-menu {
+      left: 100%;
+      top: 0;
+      margin-left: .1rem;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: white;
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu>.dropdown-menu {
+      top: 0;
+      left: 100%;
+
+      margin-top: 1px;
+    }
+
+    .dropdown-submenu:hover>.dropdown-menu {
+      display: block;
+      background-color: black;
+    }
+
+    .dropdown-submenu>a:after {
+      display: block;
+      content: " ";
+      float: right;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 5px 0 5px 5px;
+      border-left-color: #ccc;
+      margin-top: 5px;
+      margin-right: -10px;
+    }
+
+    .dropdown-submenu:hover>a:after {
+      border-left-color: #fff;
+      color: white;
+      background-color: white;
+    }
+        
+
+
+
+
+
+
+        /* .mask {
+            background: rgb(0, 0, 0);
+            background-blend-mode: darken;
+            background-size: cover;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="mask">
+
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="index.html"><img src="logo.jpg" alt="Logo"
+                style="height: 50px; width: 55px; border-radius: 100%;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html"><b style="color: white;">Home</b></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <b style="color: rgb(255, 255, 255);">Careers</b>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="careersDropdown" style="background-color: black;">
+                    <div class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#"><b style="color: gold;">Apply Jobs</b></a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#"><b style="color:gold;">LinkedIn</b></a>
+                        <a class="dropdown-item" href="#"><b style="color:gold;">Part-Time</b></a>
+                        <a class="dropdown-item" href="#"><b style="color:gold;">Full-Time</b></a>
+                        <a class="dropdown-item" href="#"><b style="color:gold;">Work from Home</b></a>
+                        <a class="dropdown-item" href="alljobs.html"><b style="color:gold;">All Jobs</b></a>
+                      </div>
+                    </div>
+                    <a class="dropdown-item" href="internships.html"><b style="color: gold;">Apply Internships</b></a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html"><b style="color: white;">Services</b></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"><b style="color: white;">About Us</b></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html"><b style="color: white;">Contact Us</b></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="ourteam.html"><b style="color: white;">Our Team</b></a>
+                </li>
+              </ul>
+            </div>
+            <b style="color: #f4f4f4;">
+              <h3>Lets Offer Job - Job Revolution</h3>
+            </b>
+          </nav>
+<br><br><br><br>      
+        <!-- 
+    <div class="background-video-wrap">
+      <video autoplay muted loop>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+<br>
+  <center><b style="color: #ffffff;"><h2>100+ Certificates VS Skilled By LOJ</h2></b> </center>  -->
+
+        <!-- <div class="container">
+  <div class="item">
+    <h2>Item 1</h2>
+    <p>This is a responsive item.</p>
+    <img src="example.jpg" alt="Example Image">
+  </div>
+  <div class="item">
+    <h2>Item 2</h2>
+    <p>This is another responsive item.</p>
+  </div>
+</div> --> <br>
+        <h1 style="padding: 30px; text-align: justify;"><b>&nbsp;&nbsp;&nbsp;&nbsp;
+            
+
+            From Learning to Earning – start your journey with Let's Offer Job
+        
+            </b>
+        </h1>
+
+        <div style="padding-left: 30px;">
+            &nbsp;&nbsp;&nbsp; <b><h3 style="color:goldenrod;">➤ Job Opportunities & Skill Development for Unskilled People</h3></b>
+         </div>
+
+<br>
+        <div class="container">
+
+            <div class="item">
+                <a href="/alljobs.html" style="color:goldenrod;">
+                    <img style="height: 400px; width: 495px;"
+                        src="https://i.pinimg.com/564x/27/86/70/278670ede6400bbc361bd3c96bacdf53.jpg"
+                        alt="Example Image">
+                    &nbsp;<h2>Job Updates</h2>
+                    <p style="text-align: justify;"> Stay ahead in your career with our daily job updates, tailored to keep you informed about the latest opportunities. Our platform curates top job listings across various industries, ensuring you never miss a chance to grow. Whether you're looking for internships, entry-level positions, or experienced roles, our daily postings make job hunting easy and efficient. 
+                        Join us to receive real-time updates and take the next step in your professional journey!
+                    </p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="" style="color:goldenrod;">
+                    <img style="height:400px; width:495px;"
+                    src="https://i.pinimg.com/564x/3a/85/4e/3a854e5a79de86e2a73472b5360872a0.jpg" alt="Example Image">
+                &nbsp;<h2>Free Skill Development</h2>
+                <p style="text-align: justify;">In our community, we offer free skill development courses to empower individuals with valuable knowledge and practical skills. These courses are designed to enhance employability and foster self-reliance.
+                     Our program covers a wide range of subjects, catering to different interests and career paths. By providing these opportunities, we aim to uplift the community and create a brighter future for everyone involved.
+
+                </p>
+                </a>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="item">
+                <a href="" style="color: goldenrod;">
+                    <img style="height: 400px; width: 495px;"
+                        src="https://i.pinimg.com/564x/b9/32/23/b93223b089c773e6029c248fe9a598a9.jpg"
+                        alt="Example Image">
+                    &nbsp;<h2>Resume Building</h2>
+                    <p style="text-align: justify;"> We offer free classes on resume building to help individuals create professional and impactful resumes.
+                         Our sessions guide participants on how to highlight their strengths, experiences, and skills effectively. By providing personalized feedback, we ensure that each resume stands out to potential employers. These classes are designed to boost confidence and increase the chances of securing job opportunities. Our goal is to support community members in their career journeys.
+
+                    </p>
+                </a>
+            </div>
+             <div class="item">
+                <a href="" style="color:goldenrod;">
+                    <img style="height: 400px; width: 495px;"
+                    src="https://i.pinimg.com/564x/14/a0/99/14a099d76b8757596a34f8f342ab12ad.jpg" alt="Example Image">
+                &nbsp;<h2>Special Single Counselling</h2>
+                <p style="text-align: justify;"> We offer special one-on-one counseling sessions to address individual concerns, such as interview fears and difficulties in creating logical solutions. These personalized sessions provide a safe space for members to discuss their challenges and receive tailored guidance. Our counselors work closely with each participant to build confidence and develop problem-solving skills. By focusing on personal growth, we aim to empower individuals to overcome obstacles and achieve success in their careers.
+                </p>
+                </a>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="item">
+                <a href="" style="color: goldenrod;">
+                    <img style="height: 400px; width: 495px;"
+                        src="https://i.pinimg.com/564x/3f/2e/32/3f2e32197bd54b22bd0c9b902f62aa77.jpg"
+                        alt="Example Image">
+                    &nbsp;<h2>Employment Opportunities</h2>
+                    <p style="text-align: justify;"> Our community website offers a dedicated service to keep you informed about the latest job opportunities. We provide real-time updates on new job postings across various industries, ensuring you never miss a chance to advance your career. Whether you're a fresh graduate or an experienced professional, our platform connects you with opportunities tailored to your skills and interests.
+                         Stay ahead in your job search with our comprehensive employment updates </p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="" style="color: goldenrod;">
+                    <img style="height: 400px; width: 495px;"
+                    src="https://i.pinimg.com/564x/c4/a8/98/c4a8988e04ce9e9f09d87c6db703fc74.jpg" alt="Example Image">
+                &nbsp;<h2>We also hire you</h2>
+                <p style="text-align: justify;"> Our community is committed to empowering individuals through our 
+                    free skill development courses. Upon completion, we provide a unique opportunity for our unskilled
+                     batch by offering employment based on their demonstrated abilities. Through rigorous skill
+                      assessments, we identify and hire talented individuals. This initiative not 
+                    only supports personal growth but also contributes to a skilled workforce in our community.         </p>
+                </a>
+            </div>
+        </div><br>
+         <div style="padding-left: 30px;">
+            &nbsp;&nbsp;&nbsp; <b><h3 style="color: goldenrod;">➤ Job Opportunities for Skilled People:</h3></b>
+         </div><br>
+        <div class="container">
+
+            <div class="item">
+                <a href="" style="color: goldenrod;">
+                    <img style="height: 400px; width: 495px;"
+                        src="https://i.pinimg.com/564x/df/db/50/dfdb5056a172e278ee6d1c6dd126adb5.jpg"
+                        alt="Example Image">
+                    &nbsp;<h2>Project Assignments</h2>
+                    <p style="text-align: justify;"> In our community, we offer hands-on experience by providing 
+                        opportunities to work on real-time projects. These projects allow you to apply your skills in
+                         practical scenarios, bridging the gap between theory and practice. Working on live projects enhances your problem-solving abilities and prepares you for real-world challenges.
+                         Our initiative is designed to boost your confidence and make you industry-ready.</p>
+                </a><br>
+            </div>
+            <div class="item">
+                <a href="" style="color: goldenrod;">
+                    <img style="height: 400px; width: 495px;"
+                    src="https://i.pinimg.com/564x/a3/31/29/a331292cce9a11d30c54fe2e918e6c3f.jpg" alt="Example Image">
+                &nbsp;<h2>Hands-On Experience</h2>
+                <p style="text-align: justify;"> We emphasize the importance of hands-on experience in our community.
+                     By engaging directly with real-world tasks, you gain practical knowledge that goes beyond
+                      textbooks. This approach allows you to develop a deeper understanding of your field, making
+                       you more adept at tackling real challenges. Hands-on experience is a cornerstone of our training, ensuring that you're not just learning concepts but mastering their application. 
+                    It's this experiential learning that sets you apart in your career journey.                </p>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="container">
+
+            <div class="item">
+                <a href="" style="color:goldenrod;">
+                    <img style="height: 400px; width: 495px;"
+                        src="https://i.pinimg.com/564x/73/23/90/7323906bd904be416a87222a07856c9a.jpg"
+                        alt="Example Image">
+                    &nbsp;<h2>You train for unskilled</h2>
+                    <p style="text-align: justify;">
+                        In our community, we believe in collaborative learning by training unskilled people with the help of
+                         skilled individuals. This approach fosters a dynamic environment where knowledge is shared, and skills are developed through peer interactions. Unskilled members benefit from the expertise of their skilled counterparts, gaining insights and practical experience.
+                          Our training programs are designed to bridge the skill gap, ensuring that everyone progresses together.
+                    <br><br>
+                        </p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="" style="color: goldenrod;">
+                    <img style="height: 400px; width: 495px;"
+                    src="https://i.pinimg.com/564x/14/a0/99/14a099d76b8757596a34f8f342ab12ad.jpg" alt="Example Image">
+                &nbsp;<h2>Special Single Counselling</h2>
+                <p style="text-align: justify;">We offer special one-on-one counseling sessions to address individual
+                     concerns, such as interview fears and difficulties in creating logical solutions. These 
+                     personalized sessions provide a safe space for members to discuss their challenges and receive
+                      tailored guidance. Our counselors work closely with each participant to build confidence and develop problem-solving skills. By focusing on personal growth,
+                     we aim to empower individuals to overcome obstacles and achieve success in their careers..</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="item">
+                <a href="" style="color:goldenrod;">
+                    <img style="height: 400px; width: 495px;"
+                        src="https://i.pinimg.com/564x/91/90/9e/91909e714b7af2886022486934c02734.jpg"
+                        alt="Example Image">
+                    &nbsp;<h2>Job Referral</h2>
+                    <p style="text-align: justify;">Our community is dedicated to supporting your career growth by offering job referral services.
+                         We connect you with potential employers through our network, increasing your chances of securing 
+                         the right job. Our referrals are based on your skills, experience, and career goals, ensuring a 
+                         tailored match for each opportunity. By leveraging our connections, we help you navigate the job
+                          market more effectively. This personalized support is designed to give you a competitive edge in your job search.</p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="" style="color: goldenrod;">
+                    <img style="height: 400px; width: 495px;"
+                    src="https://i.pinimg.com/564x/5b/f0/76/5bf076c650df2fb015a4d575e87f5f4b.jpg" alt="Example Image">
+                &nbsp;<h2>Join Us</h2>
+                <p style="text-align: justify;">We invite you to join us on this
+                    transformative journey. Whether you
+                    are looking to develop new skills or apply your existing ones, our community is here to support
+                    you every step of the way. Together, we can make a difference and create a future where everyone
+                    has the chance to succeed. <br><br><br><br>
+                </p>
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

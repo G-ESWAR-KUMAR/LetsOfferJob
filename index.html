@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lets Offer Job</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("https://images.pexels.com/photos/365633/pexels-photo-365633.jpeg?cs=srgb&dl=pexels-miriamespacio-365633.jpg&fm=jpg");
+      background-repeat: no-repeat;
+
+      background-size: cover;
+
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #000000;
+      color: rgb(255, 255, 255);
+    }
+
+    img {
+      width: 5%;
+      height: 5%;
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+    }
+
+    .background-video-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .background-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .dropdown-menu .dropdown-menu {
+      left: 100%;
+      top: 0;
+      margin-left: .1rem;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: white;
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu>.dropdown-menu {
+      top: 0;
+      left: 100%;
+
+      margin-top: 1px;
+    }
+
+    .dropdown-submenu:hover>.dropdown-menu {
+      display: block;
+      background-color: black;
+    }
+
+    .dropdown-submenu>a:after {
+      display: block;
+      content: " ";
+      float: right;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 5px 0 5px 5px;
+      border-left-color: #ccc;
+      margin-top: 5px;
+      margin-right: -10px;
+    }
+
+    .dropdown-submenu:hover>a:after {
+      border-left-color: #fff;
+      color: white;
+      background-color: white;
+    }
+
+    .big-box {
+      width: 90%;
+      margin: 100px auto;
+      
+      background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #000;
+      height: 510px;
+      border-radius: 5px;
+    }
+
+    .small-box-container {
+      display: flex;
+      animation: scroll 80s linear infinite;
+    }
+
+
+    .small-box {
+      min-width: 300px;
+      height: 350px;
+      margin-right: 15px;
+      /* background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%); */
+      background-color: white;
+      color: #fff;
+      text-align: center;
+      line-height: 150px;
+      font-size: 1.2em;
+      border-radius: 5px;
+    }
+
+    .small-box h5 {
+      background-color: #000;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-300px * 6));
+      }
+    }
+
+    .small-box-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 300px;
+      /* background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); */
+      pointer-events: none;
+    }
+
+    .small-box-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 300px;
+      /* background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); */
+      pointer-events: none;
+    }
+
+    .big-box-heading {
+      position: absolute;
+      top: 20px;
+      /* Positioned at the top of the container */
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      z-index: 1;
+      text-align: center;
+    }
+
+
+    /*For 3 Boxes*/
+    .big-container {
+      width: 90%;
+      padding: 20px;
+      background-color: #f5f5f5;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .big-container-heading {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .boxes-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .zoom-box {
+      width: 250px;
+      height: 250px;
+      margin: 10px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+    }
+
+    .zoom-box:hover {
+      transform: scale(1.1);
+    }
+
+    .box-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+    }
+
+    .box-text {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    @media screen and (max-width: 768px) {
+      .boxes-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .zoom-box {
+        width: 80%;
+      }
+    }
+
+
+    .hero-image {
+      height: 900px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #333;
+      color: #ffffff;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .text-container {
+      flex: 1;
+      padding: 40px;
+      /* margin-top: 120px; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: justify;
+    }
+
+    .image-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .image-container {
+        margin-top: 20px;
+      }
+    }
+
+
+
+
+
+    /* Hide the title text on mobile devices */
+    @media screen and (max-width: 768px) {
+      .navbar h3 {
+        display: none;
+      }
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer h5 {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .footer p,
+    .footer ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer ul {
+      list-style: none;
+    }
+
+    .footer ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .text-center {
+      margin-top: 20px;
+    }
+
+    .footer .text-center p {
+      margin: 0;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 20px;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #f8f8f8;
+    }
+
+    /* Logo styling */
+    .footer .logo {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .footer .row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer .col-md-4 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .footer .col-md-4:last-child {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mask">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <a class="navbar-brand" href="index.html"><img src="logo.jpg" alt="Logo"
+          style="height: 50px; width: 55px; border-radius: 100%;"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><b style="color: white;">Home</b></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <b style="color: rgb(255, 255, 255);">Careers</b>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="careersDropdown" style="background-color: black;">
+              <div class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#"><b style="color: gold;">Apply Jobs</b></a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#"><b style="color:gold;">LinkedIn</b></a>
+                  <a class="dropdown-item" href="#"><b style="color:gold;">Part-Time</b></a>
+                  <a class="dropdown-item" href="#"><b style="color:gold;">Full-Time</b></a>
+                  <a class="dropdown-item" href="#"><b style="color:gold;">Work from Home</b></a>
+                  <a class="dropdown-item" href="alljobs.html"><b style="color:gold;">All Jobs</b></a>
+                </div>
+              </div>
+              <a class="dropdown-item" href="internships.html"><b style="color: gold;">Apply Internships</b></a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html"><b style="color: white;">Services</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html"><b style="color: white;">About Us</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><b style="color: white;">Contact Us</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ourteam.html"><b style="color: white;">Our Team</b></a>
+          </li>
+        </ul>
+      </div>
+      <b style="color: #f4f4f4;">
+        <h3>Lets Offer Job - Job Revolution</h3>
+      </b>
+    </nav><br><br><br>
+
+    <div class="hero-image">
+      <div class="container">
+        <div class="text-container">
+          <h3><b>EXPLORE A COMMUNITY WHERE PEOPLE SHARE KNOWLEDGE AND SUPPORT EACH OTHER</b></h3>
+        </div>
+
+        <div class="image-container">
+          <img id="slideshow" src="https://i.pinimg.com/564x/27/86/70/278670ede6400bbc361bd3c96bacdf53.jpg"
+            alt="Slideshow Image">
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let images = [
+        "https://i.pinimg.com/564x/27/86/70/278670ede6400bbc361bd3c96bacdf53.jpg",
+        "https://i.pinimg.com/564x/3a/85/4e/3a854e5a79de86e2a73472b5360872a0.jpg",
+        "https://i.pinimg.com/564x/b9/32/23/b93223b089c773e6029c248fe9a598a9.jpg",
+        "https://i.pinimg.com/564x/14/a0/99/14a099d76b8757596a34f8f342ab12ad.jpg",
+        "https://i.pinimg.com/564x/3f/2e/32/3f2e32197bd54b22bd0c9b902f62aa77.jpg",
+        "https://i.pinimg.com/564x/c4/a8/98/c4a8988e04ce9e9f09d87c6db703fc74.jpg",
+        "https://i.pinimg.com/564x/df/db/50/dfdb5056a172e278ee6d1c6dd126adb5.jpg",
+        "https://i.pinimg.com/564x/a3/31/29/a331292cce9a11d30c54fe2e918e6c3f.jpg",
+        "https://i.pinimg.com/564x/73/23/90/7323906bd904be416a87222a07856c9a.jpg",
+        "https://i.pinimg.com/564x/14/a0/99/14a099d76b8757596a34f8f342ab12ad.jpg",
+        "https://i.pinimg.com/564x/91/90/9e/91909e714b7af2886022486934c02734.jpg",
+        "https://i.pinimg.com/564x/5b/f0/76/5bf076c650df2fb015a4d575e87f5f4b.jpg"
+      ];
+
+      let index = 0;
+      let slideshow = document.getElementById('slideshow');
+
+      function changeImage() {
+        index = (index + 1) % images.length;
+        slideshow.src = images[index];
+      }
+
+      setInterval(changeImage, 5000); // Change image every 5 seconds
+    </script>
+
+
+
+
+  </div>
+  <br><br><br><br><br><br>
+
+
+  <center>
+    <div class="big-container">
+      <div class="big-container-heading">Choose Your Path</div>
+      <div class="boxes-container">
+        <div class="zoom-box" onclick="location.href='page1.html'">
+          <img style="width: 200px; height: 160px;"
+          src="https://i.pinimg.com/564x/5b/f0/76/5bf076c650df2fb015a4d575e87f5f4b.jpg" alt="Form Icon" class="box-icon">
+          <p class="box-text">1. Fill this form to join us</p>
+        </div>
+        <div class="zoom-box" onclick="location.href='alljobs.html'">
+          <img style="width: 200px; height: 160px;" src="https://i.pinimg.com/564x/27/86/70/278670ede6400bbc361bd3c96bacdf53.jpg" alt="Dream Job Icon" class="box-icon">
+          <p class="box-text">2. Apply for your dream job</p>
+        </div>
+        <div class="zoom-box" onclick="location.href='contact.html'">
+          <img style="width: 200px; height: 160px;" src="team/sm.jpeg" alt="Follow Us Icon" class="box-icon">
+          <p class="box-text">3. Follow us on</p>
+        </div>
+      </div>
+    </div>
+  </center>
+
+
+  <br><br><br><br>
+
+  <!-- Scrolling Boxes Section -->
+  <div class="big-box">
+    <div class="big-box-heading">Explore Our Latest Opportunities</div><br><br><br><br><br>
+
+    <div class="small-box-container">
+      <div class="small-box">
+        <a href="/alljobs.html">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/27/86/70/278670ede6400bbc361bd3c96bacdf53.jpg" alt="Example Image">
+          <h5>Job Updates</h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href="">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/3a/85/4e/3a854e5a79de86e2a73472b5360872a0.jpg" alt="Example Image">
+          <h5>Free Skill Development</h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/b9/32/23/b93223b089c773e6029c248fe9a598a9.jpg" alt="Example Image">
+          <h5> Resume Building</h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/14/a0/99/14a099d76b8757596a34f8f342ab12ad.jpg " alt="Example Image">
+          <h5>Special Single Counselling</h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href="/alljobs.html">
+          <img style="height: 290px; width: 280px;"
+            src=" https://i.pinimg.com/564x/3f/2e/32/3f2e32197bd54b22bd0c9b902f62aa77.jpg" alt="Example Image">
+          <h5> Employment Opportunities</h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src=" https://i.pinimg.com/564x/c4/a8/98/c4a8988e04ce9e9f09d87c6db703fc74.jpg" alt="Example Image">
+          <h5>We also hire you </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src=" https://i.pinimg.com/564x/df/db/50/dfdb5056a172e278ee6d1c6dd126adb5.jpg" alt="Example Image">
+          <h5>Project Assignments </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src=" https://i.pinimg.com/564x/a3/31/29/a331292cce9a11d30c54fe2e918e6c3f.jpg" alt="Example Image">
+          <h5>Hands-On Experience </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/73/23/90/7323906bd904be416a87222a07856c9a.jpg " alt="Example Image">
+          <h5>You train for unskilled </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/14/a0/99/14a099d76b8757596a34f8f342ab12ad.jpg " alt="Example Image">
+          <h5>Special Single Counselling </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/91/90/9e/91909e714b7af2886022486934c02734.jpg " alt="Example Image">
+          <h5>Job Referral </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src=" https://i.pinimg.com/564x/5b/f0/76/5bf076c650df2fb015a4d575e87f5f4b.jpg" alt="Example Image">
+          <h5>Join Us </h5>
+        </a>
+
+      </div>
+      <!-- Repeating boxes to create a continuous loop -->
+      <div class="small-box">
+        <a href="/alljobs.html">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/27/86/70/278670ede6400bbc361bd3c96bacdf53.jpg" alt="Example Image">
+          <h5>Job Updates</h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/3a/85/4e/3a854e5a79de86e2a73472b5360872a0.jpg" alt="Example Image">
+          <h5>Free Skill Development</h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/b9/32/23/b93223b089c773e6029c248fe9a598a9.jpg" alt="Example Image">
+          <h5> Resume Building</h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/14/a0/99/14a099d76b8757596a34f8f342ab12ad.jpg " alt="Example Image">
+          <h5>Special Single Counselling</h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href="/alljobs.html">
+          <img style="height: 290px; width: 280px;"
+            src=" https://i.pinimg.com/564x/3f/2e/32/3f2e32197bd54b22bd0c9b902f62aa77.jpg" alt="Example Image">
+          <h5> Employment Opportunities</h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src=" https://i.pinimg.com/564x/c4/a8/98/c4a8988e04ce9e9f09d87c6db703fc74.jpg" alt="Example Image">
+          <h5>We also hire you </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src=" https://i.pinimg.com/564x/df/db/50/dfdb5056a172e278ee6d1c6dd126adb5.jpg" alt="Example Image">
+          <h5>Project Assignments </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src=" https://i.pinimg.com/564x/a3/31/29/a331292cce9a11d30c54fe2e918e6c3f.jpg" alt="Example Image">
+          <h5>Hands-On Experience </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/73/23/90/7323906bd904be416a87222a07856c9a.jpg " alt="Example Image">
+          <h5>You train for unskilled </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/14/a0/99/14a099d76b8757596a34f8f342ab12ad.jpg " alt="Example Image">
+          <h5>Special Single Counselling </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src="https://i.pinimg.com/564x/91/90/9e/91909e714b7af2886022486934c02734.jpg " alt="Example Image">
+          <h5>Job Referral </h5>
+        </a>
+
+      </div>
+      <div class="small-box">
+        <a href=" ">
+          <img style="height: 290px; width: 280px;"
+            src=" https://i.pinimg.com/564x/5b/f0/76/5bf076c650df2fb015a4d575e87f5f4b.jpg" alt="Example Image">
+          <h5>Join Us </h5>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <a href="about.html" style="color: white;">
+            <h5>About Us</h5>
+            <p>We are dedicated to providing the best job opportunities and career resources. Learn more about our
+              mission and values.</p>
+
+          </a>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-envelope"></i> <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a></li>
+            <li><i class="fas fa-phone"></i> +123 456 7890</li>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Street Name, City, Country</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <div class="social-icons">
+            <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
+
+            <a href="#" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+            <a href="https://www.instagram.com/letsofferjob?igsh=M2FyczU3aWQ1aGww" class="fab fa-instagram" aria-label="Instagram"></a>
+            <a href="https://t.me/letsofferjob" class="fab fa-telegram-plane" aria-label="Telegram"></a>
+            <a href="https://wa.me/1234567890" class="fab fa-whatsapp" aria-label="WhatsApp"></a>
+            <a href="mailto:info@yourwebsite.com" class="fas fa-envelope" aria-label="Gmail"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <p>&copy; 2024 Lets Offer Job - Job Revolution. All rights reserved.</p>
+    </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

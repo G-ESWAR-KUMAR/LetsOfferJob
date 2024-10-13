@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Offer Job</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f6f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: gold;
+            color: gold;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .center {
+            background-color: rgb(0, 0, 0);
+            box-shadow: rgb(255, 255, 255) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+            width: 95%;
+            margin: 50px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .social-box {
+            background-color: #000000;
+            border-radius: 10px;
+            width: 30%;
+            height: 250px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: rgb(255, 255, 255) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+            transition: all 0.3s ease;
+        }
+
+        .social-box:hover {
+            transform: scale(1.1);
+            background-color: #333;
+        }
+
+        .fa {
+            font-size: 50px;
+            color: white;
+        }
+
+        .fa:hover {
+            color: gold;
+        }
+
+        /* Mobile view adjustments */
+        @media screen and (max-width: 600px) {
+            .social-box {
+                width: 100%;
+                height: 150px;
+                margin: 10px 0;
+            }
+
+            .fa {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mask">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="index.html"><img src="logo.jpg" alt="Logo"
+                    style="height: 50px; width: 55px; border-radius: 100%;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><b style="color: white;">Home</b></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <b style="color: rgb(255, 255, 255);">Careers</b>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="careersDropdown" style="background-color: black;">
+                            <div class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#"><b style="color: gold;">Apply
+                                        Jobs</b></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#"><b style="color:gold;">LinkedIn</b></a>
+                                    <a class="dropdown-item" href="#"><b style="color:gold;">Part-Time</b></a>
+                                    <a class="dropdown-item" href="#"><b style="color:gold;">Full-Time</b></a>
+                                    <a class="dropdown-item" href="#"><b style="color:gold;">Work from Home</b></a>
+                                    <a class="dropdown-item" href="alljobs.html"><b
+                                            style="color:gold;">All Jobs</b></a>
+                                </div>
+                            </div>
+                            <a class="dropdown-item" href="internships.html"><b style="color: gold;">Apply
+                                    Internships</b></a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html"><b style="color: white;">Services</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html"><b style="color: white;">About Us</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><b style="color: white;">Contact Us</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ourteam.html"><b style="color: white;">Our Team</b></a>
+                    </li>
+                </ul>
+            </div>
+            <b style="color: #f4f4f4;">
+                <h3>Lets Offer Job - Job Revolution</h3>
+            </b>
+        </nav><br> <br><br><br>
+
+        <div class="contact">
+            <h2>Connect with us</h2>
+        </div>
+        <div class="center">
+            <!-- Separate Box for Each Social Icon -->
+            <div class="social-box">
+                <a href="https://www.instagram.com/letsofferjob?igsh=M2FyczU3aWQ1aGww" class="fa fa-instagram"
+                    title="Follow us on Instagram"></a>
+            </div>
+            <div class="social-box">
+                <a href="https://t.me/letsofferjob" class="fa fa-telegram" title="Join our Telegram community"></a>
+            </div>
+            <div class="social-box">
+                <a href="#" class="fa fa-whatsapp" title="Join our WhatsApp channel"></a>
+            </div>
+            <div class="social-box">
+                <a href="#" class="fa fa-google" title="Visit our Lets Offer Job"></a>
+            </div>
+            <div class="social-box">
+                <a href="#" class="fa fa-envelope" title="Send us an email for any queries"></a>
+            </div>
+            <div class="social-box">
+                <a href="#" class="fa fa-linkedin" title="Join our LinkedIn community"></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
